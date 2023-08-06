@@ -19,8 +19,6 @@ const ReviewList = () => {
       ...prevReview,
       selectedTags: [...(prevReview.selectedTags || []), tag], // Update selectedTags in review
     }));
-
-    console.log(tag);
   };
   const handleChange = (e) => {
     const name = e.target.name;
@@ -34,6 +32,7 @@ const ReviewList = () => {
     setReviews(updatedReviews);
     console.log(updatedReviews);
     setReview({});
+    console.log(selectedTags);
     //  setShowReview(true);
   };
   return (
