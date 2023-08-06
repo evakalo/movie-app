@@ -25,6 +25,9 @@
 .tags {
   font-weight: bold;
   font-size: 13px;
+  display: flex;
+  justify-content: space-around;
+  gap: 10px;
 }
 
 .author {

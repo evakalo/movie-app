@@ -9,13 +9,18 @@ import MovieReview from "./MovieReview";
 const ReviewList = () => {
   const [reviews, setReviews] = useState([]);
   //const [showReview, setShowReview] = useState(false);
-  // const [selectedTags, setSelectedTags] = useState({});
+  const [selectedTags, setSelectedTags] = useState([]);
   const [review, setReview] = useState({});
   const handleTagClick = (e) => {
-    const name = e.target.name;
-    const value = e.target.value;
-    setReview((values) => ({ ...values, [name]: value }));
-    console.log(e.target.value);
+    const tag = e.target.value;
+    setSelectedTags((prevTags) => [...prevTags, tag]); // Update selectedTags
+
+    setReview((prevReview) => ({
+      ...prevReview,
+      selectedTags: [...(prevReview.selectedTags || []), tag], // Update selectedTags in review
+    }));
+
+    console.log(tag);
   };
   const handleChange = (e) => {
     const name = e.target.name;
@@ -54,7 +59,7 @@ const ReviewList = () => {
           title={review.title}
           text={review.text}
           director={review.director}
-          tag={review.tag}
+          selectedTags={review.selectedTags}
         />
       ))}
     </div>
