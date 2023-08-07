@@ -1,27 +1,43 @@
 .wrapper {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 40%;
+  width: 38%;
   color: #cccccc;
-  margin: 15px;
+  margin: 10px;
   border-radius: 10px;
-  padding: 5px;
+  padding: 20px;
   background-color: #1e1e1e;
 }
-
+.textWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  width: 80%;
+  height: 200px;
+  color: #cccccc;
+  margin: 0px;
+  border-radius: 10px;
+  gap: 5px;
+  padding: 15px;
+  background-color: #1e1e1e;
+}
 .header,
 .tags,
-.text,
 .cast,
+.text,
 .author {
-  padding: 5px 10px;
+  padding: 7px 10px;
+  margin: 0;
 }
+
 .header,
 .author {
   color: white;
+  font-size: 20px;
 }
-
+.titles {
+  display: flex;
+}
 .tags {
   font-weight: bold;
   font-size: 13px;
@@ -33,29 +49,58 @@
 .author {
   font-weight: bold;
 }
-.image {
-  border-radius: 5px;
+
+.text {
+  margin: 0;
+}
+.poster {
+  width: 30%;
+  height: 30%;
+
+  color: #1e1e1e;
+}
+.textWrapper p {
+  font-size: 12px;
 }
 @media (max-width: 700px) {
   .wrapper {
-    flex-wrap: wrap;
-    justify-content: center;
+    align-items: flex-start;
     flex-direction: column;
-    width: 80%;
+    width: 90%;
+    padding: 10px;
   }
+  .textWrapper {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    width: 80%;
 
-  .image {
-    border-radius: 15px;
+    height: auto;
+    padding: 20px;
+  }
+  .poster {
+    width: 100%;
   }
   .tags {
+    font-size: 12px;
+  }
+  .titles {
+    gap: 10px;
+  }
+  .header {
+    font-size: 16px;
+  }
+
+  .tags p {
     font-weight: bold;
     font-size: 12px;
   }
+
   .header,
   .tags,
   .text,
   .cast,
   .author {
-    padding: 0px 5px;
+    padding: 0px 0px;
   }
 }

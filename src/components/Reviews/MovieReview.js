@@ -1,19 +1,30 @@
 import filmsStyles from "../../styles/MovieReview.module.css";
 
-const MovieReview = ({ title, text, director, children, selectedTags }) => {
+const MovieReview = ({ text, selectedTags, movie }) => {
   return (
     <div className={filmsStyles.wrapper}>
-      <h2>{children}</h2>
-      <h3 className={filmsStyles.header}>Title : {title}</h3>
-      <h5 className={filmsStyles.cast}>director: {director}</h5>
-      <p className={filmsStyles.text}>Review: {text}</p>
-      <div className={filmsStyles.tags}>
-        {selectedTags ? (
-          selectedTags.map((tag, index) => <p key={index}>#{tag}</p>)
-        ) : (
-          <p></p>
-        )}
+      <img
+        src={movie.poster}
+        className={filmsStyles.poster}
+        alt="movie poster"
+      ></img>
+      <div className={filmsStyles.textWrapper}>
+        <h3 className={filmsStyles.header}>{movie.title}</h3>
+        <div className={filmsStyles.titles}>
+          <h5 className={filmsStyles.cast}>Year: {movie.year}</h5>
+          <h5 className={filmsStyles.cast}>Director: {movie.director}</h5>
+        </div>
+        <h5 className={filmsStyles.text}>Review:</h5>
+        <p className={filmsStyles.text}> {text}</p>
+        <div className={filmsStyles.tags}>
+          {selectedTags ? (
+            selectedTags.map((tag, index) => <p key={index}>#{tag}</p>)
+          ) : (
+            <p></p>
+          )}
+        </div>{" "}
       </div>
+
       {/* <p className={filmsStyles.author}> by: {data.author}</p> */}
     </div>
   );
