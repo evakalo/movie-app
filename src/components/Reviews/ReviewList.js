@@ -1,5 +1,3 @@
-// import { Raleway } from "next/font/google";
-// import { Open_Sans } from "next/font/google";
 import listStyles from "../../styles/ReviewList.module.css";
 
 import { useState } from "react";
@@ -55,7 +53,7 @@ const ReviewList = () => {
   const handleSearch = (e) => {
     e.preventDefault();
     const film = review.title;
-    // const apiKey = super secret key;
+    const apiKey = "bbfe3240";
 
     fetch(`https://www.omdbapi.com/?i=tt3896198&apikey=${apiKey}&s=${film}`)
       .then((success) => {
