@@ -25,6 +25,7 @@ const ReviewList = () => {
     const value = e.target.value;
     setReview((values) => ({ ...values, [name]: value }));
   };
+  //if there are movies, put them in data state - send as props to review form
   const handleData = (data) => {
     if (data) {
       // console.log(data.Search);
@@ -40,6 +41,7 @@ const ReviewList = () => {
   const handleError = (data) => {
     alert("No movies");
   };
+  //fills the details of the movie in the form fields
   const fillInMovie = (movie, year, poster) => {
     setReview({
       title: movie,
@@ -49,7 +51,7 @@ const ReviewList = () => {
 
     setShowSuggestions(false);
   };
-
+  //search by the movie in the api
   const handleSearch = (e) => {
     e.preventDefault();
     const film = review.title;
@@ -71,10 +73,12 @@ const ReviewList = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
+    //copied the reviews array, added new review, set updated reviews in the reviews state
     const updatedReviews = [...reviews];
     updatedReviews.push(review);
     setReviews(updatedReviews);
+    //clear the form
+
     setReview({});
 
     console.log(selectedTags);

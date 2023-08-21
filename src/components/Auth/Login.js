@@ -15,6 +15,7 @@ const Login = () => {
       console.log(email);
     } else if (name === "password") {
       setPassword(value);
+      console.log(password);
     }
   };
   // tu dovrsi auth iz firebasea kad napravis projekt
