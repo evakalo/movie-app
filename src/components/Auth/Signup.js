@@ -1,4 +1,5 @@
 import { useState } from "react";
+//same form so use the same styles
 import loginStyles from "../../styles/Login.module.css";
 import { Link } from "react-router-dom";
 const SignUp = () => {

@@ -8,6 +8,7 @@
   color: white;
   font-size: 17px;
 }
+
 .form {
   background-color: #1e1e1e;
   display: flex;
@@ -25,7 +26,7 @@
   color: white;
 }
 .form input {
-  padding: 3%;
+  padding: 4%;
   border-radius: 4px;
   background-color: #333333;
   border: none;
@@ -54,4 +55,51 @@
 }
 .logout {
   background-color: #333d51;
+}
+
+@media (max-width: 1300px) {
+  .form {
+    font-size: 18px;
+    width: 300px;
+  }
+  .form input {
+    padding: 5%;
+    border-radius: 4px;
+    background-color: #333333;
+    border: none;
+    color: white;
+  }
+  .form button {
+    background-color: #dda815;
+    border: none;
+    border-radius: 4px;
+    color: white;
+    padding: 4%;
+
+    margin-top: 10px;
+  }
+}
+@media (max-width: 800px) {
+  .form {
+    padding: 5%;
+    font-size: 18px;
+    margin: 20px 0px;
+    width: 350px;
+  }
+}
+@media (max-width: 600px) {
+  .form {
+    padding: 5%;
+    font-size: 18px;
+    margin: 20px 0px;
+    width: 300px;
+  }
+}
+@media (max-width: 330px) {
+  .form {
+    padding: 5%;
+    font-size: 18px;
+    margin: 20px 0px;
+    width: 250px;
+  }
 }

@@ -1,12 +1,18 @@
 import { useState } from "react";
 import loginStyles from "../../styles/Login.module.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+
+  //provjeri ima li bolja opcija
+  //auth namjesti preko firebasea
+  const navigate = useNavigate();
   const login = (e) => {
     e.preventDefault();
+    navigate("/dashboard");
   };
+
   const handleChange = (e) => {
     const name = e.target.name;
     const value = e.target.value;

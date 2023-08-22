@@ -1,7 +1,7 @@
 .review {
   margin: 20px;
   display: flex;
-  width: 40%;
+  width: 30%;
   font-family: Tahoma, sans-serif;
   color: white;
 }
@@ -10,7 +10,7 @@
   background-color: #333333;
   background-color: #1e1e1e;
   border-radius: 10px;
-  padding: 20px;
+  padding: 30px;
   display: flex;
   flex-direction: column;
 }
