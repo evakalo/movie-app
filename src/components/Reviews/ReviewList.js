@@ -55,8 +55,7 @@ const ReviewList = () => {
   const handleSearch = (e) => {
     e.preventDefault();
     const film = review.title;
-
-    const apiKey = "secret api key";
+    const apiKey = "secret key";
 
     fetch(`https://www.omdbapi.com/?i=tt3896198&apikey=${apiKey}&s=${film}`)
       .then((success) => {
