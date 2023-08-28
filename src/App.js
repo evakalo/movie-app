@@ -6,10 +6,11 @@ import Login from "./components/Auth/Login";
 import SignUp from "./components/Auth/Signup";
 import Dashboard from "./components/Dashboard/Dashboard";
 import MyReviews from "./components/Reviews/MyReviews";
+import ResponsiveNavigation from "./components/Nav/ResponsiveNavigation";
 function App() {
   return (
     <>
-      <Nav />
+      <ResponsiveNavigation />
       <Routes>
         <Route exact path="/" element={<Login />} />
         <Route exact path="/signup" element={<SignUp />} />

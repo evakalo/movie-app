@@ -21,7 +21,7 @@ const SigninLinks = ({ user }) => {
           Home
         </Link>
         <Link to="/myreviews" className={navStyles.link}>
-          New review
+          Your review
         </Link>
 
         <li>

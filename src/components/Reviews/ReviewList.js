@@ -44,7 +44,7 @@ const ReviewList = () => {
   }, []);
   return (
     <div className={listStyles.container}>
-      <h4 style={{ color: "white" }}>Friends reviews</h4>
+      <h2 style={{ color: "white" }}>Friends reviews</h2>
       {reviews.map((review, index) => (
         <MovieReview
           key={index}

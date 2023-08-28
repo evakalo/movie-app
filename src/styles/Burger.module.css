@@ -1,0 +1,87 @@
+.nav {
+  height: 100%;
+  position: fixed;
+  left: 0;
+}
+
+.burger {
+  color: white;
+  background-color: rgba(0, 0, 0, 0.625);
+  padding: 0 10px;
+  font-size: 35px;
+  margin-left: 10px;
+  cursor: pointer;
+  position: fixed;
+  left: 0;
+  display: none;
+}
+.burger:hover {
+  font-size: 38px;
+}
+
+.arrow {
+  color: white;
+  font-size: 25px;
+  background-color: #1e1e1e;
+  align-self: flex-end;
+  margin: 10px;
+  cursor: pointer;
+}
+
+.nav li {
+  color: white;
+  font-size: 20px;
+  padding: 10px 0px;
+  list-style-type: none;
+  text-decoration: none;
+}
+
+.nav ul {
+  display: none;
+  width: 30%;
+  height: 100%;
+  flex-direction: column;
+  background-color: black;
+  border-radius: 7px;
+  text-decoration: none;
+}
+
+@media (max-width: 1024px) {
+  .nav ul {
+    position: fixed;
+    top: 10px;
+    display: flex;
+    width: 25%;
+    height: 100%;
+    top: 20px;
+    z-index: 1000;
+  }
+  .burger {
+    position: fixed;
+    top: 3rem;
+    font-size: 30px;
+    display: block;
+    z-index: 1000;
+  }
+  .burger:hover {
+    font-size: 32px;
+  }
+}
+
+@media (max-width: 697px) {
+  .nav ul {
+    width: 50%;
+    z-index: 1000;
+  }
+}
+@media (max-width: 540px) {
+  .nav ul {
+    width: 50%;
+    z-index: 1000;
+  }
+}
+@media (max-width: 379px) {
+  .nav ul {
+    width: 50%;
+  }
+}
