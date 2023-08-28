@@ -1,6 +1,5 @@
 import filmsStyles from "../../styles/MovieReview.module.css";
-
-const MovieReview = ({ text, selectedTags, movie }) => {
+const MovieReview = ({ text, selectedTags, movie, user, deleteReview, id }) => {
   return (
     <div className={filmsStyles.wrapper}>
       <img
@@ -24,6 +23,20 @@ const MovieReview = ({ text, selectedTags, movie }) => {
           )}
         </div>{" "}
       </div>
+      {user ? (
+        <div className={filmsStyles.buttons}>
+          <button className={filmsStyles.editButton}>Edit </button>{" "}
+          <button
+            value={id}
+            className={filmsStyles.editButton}
+            onClick={() => deleteReview(id)}
+          >
+            Delete{" "}
+          </button>
+        </div>
+      ) : (
+        <></>
+      )}
 
       {/* <p className={filmsStyles.author}> by: {data.author}</p> */}
     </div>

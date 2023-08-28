@@ -5,6 +5,7 @@ import Nav from "./components/Nav/Nav";
 import Login from "./components/Auth/Login";
 import SignUp from "./components/Auth/Signup";
 import Dashboard from "./components/Dashboard/Dashboard";
+import MyReviews from "./components/Reviews/MyReviews";
 function App() {
   return (
     <>
@@ -13,6 +14,7 @@ function App() {
         <Route exact path="/" element={<Login />} />
         <Route exact path="/signup" element={<SignUp />} />
         <Route exact path="/dashboard" element={<Dashboard />} />
+        <Route exact path="/myreviews" element={<MyReviews />} />
       </Routes>
     </>
   );

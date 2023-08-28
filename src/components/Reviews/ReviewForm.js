@@ -26,13 +26,13 @@ const ReviewForm = ({
   return (
     <section className={formStyles.review}>
       <form onSubmit={handleSubmit}>
-        <h3 className={formStyles.title}>Your review </h3>
+        <h3 className={formStyles.title}>New review </h3>
         <div className={formStyles.searchBar}>
           <h5>Title</h5>
           <input
             name="title"
             type="search"
-            placeholder="e.g. Annie Hall..."
+            placeholder="e.g. Annie Hall...press search"
             value={title || ""}
             onChange={handleChange}
           ></input>{" "}

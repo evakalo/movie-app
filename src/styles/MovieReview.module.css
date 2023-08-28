@@ -62,6 +62,29 @@
 .textWrapper p {
   font-size: 12px;
 }
+.buttons {
+  display: flex;
+  padding: 20px 0;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+  width: 10%;
+  /* border: 1px solid white; */
+}
+.editButton {
+  background-color: #1e1e1e;
+  padding: 10px 0px;
+  border: none;
+  color: white;
+  height: 10%;
+  width: 100%;
+  font-size: 14px;
+  border-radius: 10px;
+}
+.editButton:hover {
+  color: #cccccc;
+  cursor: pointer;
+}
 @media (max-width: 700px) {
   .wrapper {
     align-items: flex-start;
@@ -74,7 +97,6 @@
     align-items: flex-start;
     justify-content: center;
     width: 80%;
-
     height: auto;
     padding: 20px;
   }
@@ -102,5 +124,28 @@
   .cast,
   .author {
     padding: 0px 0px;
+  }
+
+  .buttons {
+    display: flex;
+    padding: 20px 0;
+    flex-direction: row;
+    gap: 10px;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+  }
+  .editButton {
+    background-color: white;
+    padding: 10px 0px;
+    border: none;
+    color: #1e1e1e;
+    height: 10%;
+    width: 100%;
+    font-size: 16px;
+    border-radius: 10px;
+  }
+  .editButton:hover {
+    color: #1e1e1e;
   }
 }

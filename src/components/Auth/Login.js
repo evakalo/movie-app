@@ -1,16 +1,28 @@
 import { useState } from "react";
 import loginStyles from "../../styles/Login.module.css";
 import { Link, useNavigate } from "react-router-dom";
+import { signInWithEmailAndPassword } from "firebase/auth";
+import { auth } from "../../services/firebase.config";
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-
+  const [errorMessage, setErrorMessage] = useState("");
   //provjeri ima li bolja opcija
   //auth namjesti preko firebasea
   const navigate = useNavigate();
-  const login = (e) => {
+  const login = async (e) => {
     e.preventDefault();
-    navigate("/dashboard");
+    await signInWithEmailAndPassword(auth, email, password)
+      .then((cred) => {
+        console.log("user logged in", cred.user);
+        setEmail("");
+        setPassword("");
+        navigate("/dashboard");
+      })
+      .catch((err) => {
+        console.log(err.message);
+        setErrorMessage(err.message);
+      });
   };
 
   const handleChange = (e) => {
@@ -24,8 +36,7 @@ const Login = () => {
       console.log(password);
     }
   };
-  // tu dovrsi auth iz firebasea kad napravis projekt
-  //i kopiraj funkcije
+
   return (
     <div className={loginStyles.wrapper}>
       <form className={loginStyles.form} onSubmit={login}>
@@ -38,6 +49,7 @@ const Login = () => {
       <p>
         Not a user? <Link to="/signup">Sign up</Link>
       </p>
+      <p>{errorMessage}</p>
     </div>
   );
 };
