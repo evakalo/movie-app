@@ -70,7 +70,7 @@ const MyReviews = () => {
   const handleSearch = (e) => {
     e.preventDefault();
     const film = review.title;
-    const apiKey = "secret key";
+    const apiKey = "secret api";
 
     fetch(`https://www.omdbapi.com/?i=tt3896198&apikey=${apiKey}&s=${film}`)
       .then((results) => {
@@ -125,6 +125,7 @@ const MyReviews = () => {
     setReviews(updatedReviews);
     //clear the form
     setReview({});
+    showReviews();
   };
   //get current user's reviews from collection - filter by cuurent user uid, put them in reviews state and call the function
   const showReviews = async () => {
@@ -139,20 +140,20 @@ const MyReviews = () => {
       uid: auth.currentUser.uid,
     }));
 
-    // setReviews(userReviews);
+    setReviews(userReviews);
 
     //sorts the newest on the top
-    const sortedData = userReviews.sort((a, b) => {
-      const dateA = a.createdAt.toDate().getTime();
-      const dateB = b.createdAt.toDate().getTime();
-      if (dateA > dateB) {
-        return -1;
-      } else {
-        return 1;
-      }
-    });
+    // const sortedData = userReviews.sort((a, b) => {
+    //   const dateA = a.createdAt.toDate().getTime();
+    //   const dateB = b.createdAt.toDate().getTime();
+    //   if (dateA > dateB) {
+    //     return -1;
+    //   } else {
+    //     return 1;
+    //   }
+    // });
 
-    setReviews(sortedData);
+    //setReviews(sortedData);
   };
 
   const deleteReview = async (reviewId) => {
